@@ -48,4 +48,24 @@ class DashboardController extends Controller
     {
         return view('backend.eCommerce');
     }
+
+    public function secre1()
+    {
+        return view('backend.dashboard_secre1');
+    }
+
+    public function secre2()
+    {
+        return view('backend.dashboard_secre2');
+    }
+
+    public function dirc1()
+    {
+        return view('backend.dashboard_dirc1');
+    }
+
+    public function dirc2()
+    {
+        return view('backend.dashboard_dirc2');
+    }
 }

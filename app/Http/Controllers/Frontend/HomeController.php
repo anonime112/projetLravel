@@ -18,10 +18,21 @@ class HomeController extends Controller
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function index(Request $request) {
+        
         if (Auth::check()) {
-            if (Auth::user()->role === "admin") {
-                
-                return redirect()->route('admin.dashboard'); // nom de route recommandé
+            $role = Auth::user()->role;
+
+            $redirectRoutes = [
+                'admin'    => 'admin.dashboard',
+                'secre1'   => 'secre1.dashboard',
+                'secre2'   => 'secre2.dashboard',
+                'dirc1'    => 'dirc1.dashboard',
+                'dirc2'    => 'dirc2.dashboard',
+            ];
+
+            // Redirection en fonction du rôle
+            if (array_key_exists($role, $redirectRoutes)) {
+                return redirect()->route($redirectRoutes[$role]);
             }
 
             return view('frontend.user.dashboard');

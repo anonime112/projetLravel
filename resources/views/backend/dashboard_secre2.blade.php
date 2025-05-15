@@ -8,7 +8,7 @@
         <div class="col-lg-12 col-md-12">
             <div class="card planned_task">
                 <div class="header">
-                    <h2>Welcome Etudiant</h2>
+                    <h2>Welcome SECRE2</h2>
                     <ul class="header-dropdown">
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>

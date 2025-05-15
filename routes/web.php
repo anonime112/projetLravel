@@ -111,6 +111,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 });
 
+Route::get('/dashboard/secre1', [DashboardController::class, 'secre1'])->name('secre1.dashboard');
+Route::get('/dashboard/secre2', [DashboardController::class, 'secre2'])->name('secre2.dashboard');
+Route::get('/dashboard/dirc1', [DashboardController::class, 'dirc1'])->name('dirc1.dashboard');
+Route::get('/dashboard/dirc2', [DashboardController::class, 'dirc2'])->name('dirc2.dashboard');
+
 
 Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
     // User Dashboard Specific
