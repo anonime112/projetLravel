@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\EtudiantController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\Auth\ConfirmAccountController;
 use App\Http\Controllers\Frontend\Auth\ForgotPasswordController;
@@ -115,7 +116,6 @@ Route::get('/dashboard/secre1', [DashboardController::class, 'secre1'])->name('s
 Route::get('/dashboard/secre2', [DashboardController::class, 'secre2'])->name('secre2.dashboard');
 Route::get('/dashboard/dirc1', [DashboardController::class, 'dirc1'])->name('dirc1.dashboard');
 Route::get('/dashboard/dirc2', [DashboardController::class, 'dirc2'])->name('dirc2.dashboard');
-
 
 Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
     // User Dashboard Specific

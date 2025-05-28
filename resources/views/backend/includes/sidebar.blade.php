@@ -6,7 +6,7 @@
         <div class="user-account">
             <img src="{{url('/')}}/assets/images/user.png" class="rounded-circle user-photo" alt="User Profile Picture">
             <div class="dropdown">
-                <span>Welcome,</span>
+                <span>Bienvenu,</span>
                 @if(Auth::check())
                 <i class="fas fa-envelope"></i> {{ auth()->user()->name }}<br/>
                 <i class="fas fa-envelope"></i> {{ auth()->user()->email }}<br/>    
@@ -14,14 +14,15 @@
  
                         @endif
                 <ul class="dropdown-menu dropdown-menu-right account">
-                    <li><a href="{{ route('admin.auth.user.show', auth()->user()->id) }}"><i class="icon-user"></i>My Profile</a></li>
+                    <li><a href="{{ route('admin.auth.user.show', auth()->user()->id) }}"><i class="icon-user"></i>Mon Profile</a></li>
                     <li><a href="{{ route('admin.auth.app.inbox') }}"><i class="icon-envelope-open"></i>Messages</a></li>
-                    <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
+                    <li><a href="javascript:void(0);"><i class="icon-settings"></i>Paramètre</a></li>
                     <li class="divider"></li>
-                    <li><a href="{{ route('frontend.auth.logout') }}"><i class="icon-power"></i>Logout</a></li>
+                    <li><a href="{{ route('frontend.auth.logout') }}"><i class="icon-power"></i>Deconnexion</a></li>
                 </ul>
             </div>
             <hr>
+            {{-- 
             <ul class="row list-unstyled">
                 <li class="col-4">
                     <small>Sales</small>
@@ -35,7 +36,7 @@
                     <small>Revenue</small>
                     <h6>$23B</h6>
                 </li>
-            </ul>
+            </ul> --}}
         </div>
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" id="myTab">
@@ -325,7 +326,7 @@
                 </ul>                    
 
                 <hr>
-                <h6>General Settings</h6>
+                {{-- <h6>General Settings</h6>
                 <ul class="setting-list list-unstyled">
                     <li>
                         <label class="fancy-checkbox">
@@ -345,12 +346,13 @@
                             <span>Location Permission</span>
                         </label>
                     </li>
-                </ul>
+                </ul> 
 
                 <a href="#" target="_blank" class="btn btn-block btn-primary">Buy this item</a>
                 <a href="https://themeforest.net/user/wrraptheme/portfolio" target="_blank" class="btn btn-block btn-secondary">View portfolio</a>
+                --}}
             </div>
-            <div class="tab-pane" id="question">
+            {{-- <div class="tab-pane" id="question">
                 <form>
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -375,7 +377,8 @@
                         <a href="../docs/index.html" class="btn btn-primary btn-block">Documentation</a>
                     </li>
                 </ul>
-            </div>    
+            </div> 
+                --}}
         </div>          
     </div>
 @push('after-scripts')

@@ -37,10 +37,12 @@
             <div id="navbar-menu">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
+                        {{--
                         <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                             <i class="fa fa-bell"></i>
                             <span class="notification-dot"></span>
                         </a>
+                         
                         <ul class="dropdown-menu notifications">
                             <li class="header"><strong>You have 4 new Notifications</strong></li>
                             <li>
@@ -96,7 +98,7 @@
                                 </a>
                             </li>
                             <li class="footer"><a href="javascript:void(0);" class="more">See all notifications</a></li>
-                        </ul>
+                        </ul> --}}
                     </li>
                     <li>
                         <a href="{{ route('frontend.auth.logout') }}" class="icon-menu"><i class="fa fa-power-off"></i></a>

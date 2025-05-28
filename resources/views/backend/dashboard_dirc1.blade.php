@@ -8,8 +8,8 @@
         <div class="col-lg-12 col-md-12">
             <div class="card planned_task">
                 <div class="header">
-                    <h2>Welcome dirc1</h2>
-                    <ul class="header-dropdown">
+                    <h2>Welcome </h2>
+                    {{-- <ul class="header-dropdown">
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                             <ul class="dropdown-menu dropdown-menu-right">
@@ -18,7 +18,7 @@
                                 <li><a href="javascript:void(0);">Something else</a></li>
                             </ul>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
                 <div class="body">
                     <h4>Welcome</h4>
