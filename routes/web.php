@@ -14,18 +14,23 @@ use App\Http\Controllers\Frontend\Auth\ResetPasswordController;
 use App\Http\Controllers\Frontend\Auth\SocialLoginController;
 use App\Http\Controllers\Frontend\Auth\UpdatePasswordController;
 
-use App\Http\Controllers\Auth\User\UserStatusController;
-use App\Http\Controllers\Auth\User\UserController;
-use App\Http\Controllers\Auth\User\UserConfirmationController;
-use App\Http\Controllers\Auth\User\UserSocialController;
-use App\Http\Controllers\Auth\User\UserPasswordController;
-use App\Http\Controllers\Auth\User\UserAccessController;
-use App\Http\Controllers\Auth\User\UserSessionController;
+use App\Http\Controllers\Backend\Auth\User\UserStatusController;
+use App\Http\Controllers\Backend\Auth\User\UserController;
+use App\Http\Controllers\Backend\Auth\User\UserConfirmationController;
+use App\Http\Controllers\Backend\Auth\User\UserSocialController;
+use App\Http\Controllers\Backend\Auth\User\UserPasswordController;
+use App\Http\Controllers\Backend\Auth\User\UserAccessController;
+use App\Http\Controllers\Backend\Auth\User\UserSessionController;
 use App\Http\Controllers\Auth\Role\RoleController;
-use App\Http\Controllers\Backend\Ui\UiController;
-use App\Http\Controllers\Backend\Chart\ChartController;
+use App\Http\Controllers\Backend\Auth\Chart\ChartController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllerss\Backend\Setting\SettingController;
+use App\Http\Controllers\Backend\Auth\Page\PageController;
+use App\Http\Controllers\Backend\Auth\Ui\UiController;
+use App\Http\Controllers\Backend\Auth\Form\FormController;
+use App\Http\Controllers\Backend\Auth\Table\TableController;
+
+
 
 use App\Http\Controllers\Frontend\User\ProfileController;
 /*
@@ -392,5 +397,11 @@ Route::get('eCommerce', [DashboardController::class, 'eCommerce'])->name('eComme
         Route::get('/contact-us', [PageControll::class, 'show'])->defaults('page', 'contact-us')->name('contact-us');
         Route::get('/home-two', [PageControll::class, 'show'])->defaults('page', 'home-two')->name('home-two');
         Route::get('/home-three', [PageControll::class, 'show'])->defaults('page', 'home-three')->name('home-three');
+        Route::get('/demande', [PageControll::class, 'show'])->defaults('page', 'demande')->name('demande');
+        Route::get('/demande-details', [PageControll::class, 'show'])->defaults('page', 'demande-details')->name('demande-details');
+        Route::get('/suivi_demande', [PageControll::class, 'show'])->defaults('page', 'suivi_demande')->name('suivi_demande');
+
+
+
     });
     

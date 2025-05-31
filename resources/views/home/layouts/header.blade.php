@@ -44,16 +44,13 @@
 
 
                     <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link active">
+                        <a  href="{{ route('requests.index')}}" class="dropdown-toggle nav-link active">
                             Home
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{{ route('requests.index')}}" class="nav-link">Home One</a></li>
-                            <li class="nav-item"><a href="index2'" class="nav-link active">Home Two</a></li>
-                            <li class="nav-item"><a href="index3'" class="nav-link">Home Three</a></li>
-                        </ul>
+                     
                     </li>
                     <li class="nav-item">
+                  
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             Pages
                         </a>
@@ -62,6 +59,8 @@
                             <li class="nav-item"><a href="{{ route('requests.news-and-blog')}}" class="nav-link">News and Blog</a></li>
                             <li class="nav-item"><a href="{{ route('requests.blog-details')}}" class="nav-link">Blog Details</a></li>
                             <li class="nav-item"><a href="{{ route('requests.alumni')}}" class="nav-link">Alumni</a></li>
+                            <li class="nav-item"><a  href="{{ route('requests.contact-us')}} class="nav-link">Contact</a></li>
+
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -74,6 +73,12 @@
                             <li class="nav-item"><a href="{{ route('requests.graduate')}}" class="nav-link">Graduate</a></li>
                             <li class="nav-item"><a href="{{ route('requests.online-education')}}" class="nav-link">Online Education</a></li>
                             <li class="nav-item"><a href="{{ route('requests.faculty')}}" class="nav-link">Faculty</a></li>
+                            
+                            <li class="nav-item"><a href="{{ route('requests.university-life')}}" class="nav-link">University Life</a></li>
+                            <li class="nav-item"><a href="{{ route('requests.the-campus-experience')}}" class="nav-link">The Campus Experience</a></li>
+                            <li class="nav-item"><a href="{{ route('requests.fitness-athletics')}}" class="nav-link">Fitness & Athletics</a></li>
+                            <li class="nav-item"><a href="{{ route('requests.support-guidance')}}" class="nav-link">Support & Guidance</a></li>
+                            <li class="nav-item"><a href="{{ route('requests.student-activities')}}" class="nav-link">Student Activities</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -98,22 +103,24 @@
                             <li class="nav-item"><a href="{{ route('requests.courses-details')}}" class="nav-link">Course Details</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             University Life
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{{ route('requests.university-life')}}" class="nav-link">University Life</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.the-campus-experience')}}" class="nav-link">The Campus Experience</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.fitness-athletics')}}" class="nav-link">Fitness & Athletics</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.support-guidance')}}" class="nav-link">Support & Guidance</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.student-activities')}}" class="nav-link">Student Activities</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a href="{{ route('requests.contact-us')}}" class="nav-link">
-                            Contact
+                    
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                        demande
                         </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a href="{{ route('requests.demande')}}" class="nav-link">demande</a></li>
+                            <li class="nav-item"><a href="{{ route('requests.demande-details')}}" class="nav-link"> Details</a></li>
+                            <li class="nav-item"><a href="{{ route('requests.suivi_demande')}}" class="nav-link">suivi demande</a></li>
+
+                        </ul>
                     </li>
                 </ul>
                 <div class="others-option d-flex align-items-center">
@@ -162,16 +169,8 @@
                                         Home One
                                     </a>
                                 </div>
-                                <div class="accordion-item">
-                                    <a href="index2'" class="accordion-link active">
-                                        Home Two
-                                    </a>
-                                </div>
-                                <div class="accordion-item">
-                                    <a href="index3'" class="accordion-link">
-                                        Home Three
-                                    </a>
-                                </div>
+                          
+                           
                             </div>
                         </div>
                     </div>

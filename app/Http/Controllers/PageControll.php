@@ -35,6 +35,10 @@ class PageControll extends Controller
             'support-guidance',
             'student-activities',
             'contact-us',
+            'demande-details',
+            'demande',
+            'suivi_demande',
+
         ];
 
         // Vérifier si la page demandée est valide
