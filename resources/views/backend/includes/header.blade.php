@@ -5,7 +5,7 @@
         <div class="navbar-brand">
             <button type="button" class="btn-toggle-offcanvas"><i class="fa fa-bars"></i></button>
             <button type="button" class="btn-toggle-fullwidth"><i class="fa fa-bars"></i></button>
-            <a href="index.html">ICONIC</a>  
+            <a href="{{route('requests.index')}}">MIAGE</a>  
             @if(Auth::check())
                         @if (Auth::user()->role=="admin")
                         <li class="nav-item d-flex align-items-center justify-content-between">
@@ -30,7 +30,7 @@
         
         <div class="navbar-right">
             <form id="navbar-search" class="navbar-form search-form">
-                <input value="" class="form-control" placeholder="Search here..." type="text">
+                <input value="" class="form-control" placeholder="Rechercher ici..." type="text">
                 <button type="button" class="btn btn-default"><i class="icon-magnifier"></i></button>
             </form>                
 

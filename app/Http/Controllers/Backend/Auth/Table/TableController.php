@@ -43,4 +43,5 @@ class TableController extends Controller
     {
         return view('backend.auth.table.dragger');
     }
-}
+
+   

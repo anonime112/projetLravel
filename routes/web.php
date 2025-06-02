@@ -26,7 +26,9 @@ use App\Http\Controllers\Backend\Ui\UiController;
 use App\Http\Controllers\Backend\Chart\ChartController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllerss\Backend\Setting\SettingController;
+use App\Http\Controllers\Backend\Auth\Table\TableController;
 
+use App\Http\Controllers\DemandeController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 /*
 |--------------------------------------------------------------------------
@@ -128,10 +130,24 @@ Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
     Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
+// SECTION SECRETAIRE 1
+Route::prefix('table')->name('table.')->group(function () {
+    Route::get('table_secretaire1', [DemandeController::class, 'index1'])->name('secre1');
+
+});
 
 
 
+// SECTION SECRETAIRE 2
+        
+Route::prefix('table')->name('table.')->group(function () {
+    Route::get('table_secretaire', [DemandeController::class, 'index'])->name('secre2');
 
+});
+Route::get('/demandes', [DemandeController::class, 'index'])->name('demandes.index');
+Route::get('/demandes/{id}', [DemandeController::class, 'show'])->name('demandes.show');
+Route::post('/demandes/{id}/valider', [DemandeController::class, 'valider'])->name('demandes.valider');
+Route::post('/demandes/{id}/decliner', [DemandeController::class, 'decliner'])->name('demandes.decliner');
 
 
 
@@ -189,13 +205,18 @@ Route::prefix('auth')
 
 
         Route::prefix('table')->name('table.')->group(function () {
+        
+        Route::get('table_secretaire', [TableController::class, 'tablesecretaire'])->name('secre2');
+
         Route::get('tableBasic', [TableController::class, 'tableBasic'])->name('basic');
         Route::get('normal', [TableController::class, 'normal'])->name('normal');
         Route::get('datatable', [TableController::class, 'datatable'])->name('datatable');
         Route::get('editable', [TableController::class, 'editable'])->name('editable');
         Route::get('color', [TableController::class, 'color'])->name('color');
         Route::get('filter', [TableController::class, 'filter'])->name('filter');
-        Route::get('dragger', [TableController::class, 'dragger'])->name('dragger');   });
+        Route::get('dragger', [TableController::class, 'dragger'])->name('dragger');   
+
+        });
 
 
 
