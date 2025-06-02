@@ -11,7 +11,7 @@
             </div>
 
             <div class="card-body">
-                <form method="POST" action="{{ route('frontend.auth.register.post') }}">
+                <form method="POST" action="/auth/register"></form>
                     @csrf
 
                     <div class="row">

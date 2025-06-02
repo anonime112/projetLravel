@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use Altek\Accountant\Contracts\Recordable;
-use Altek\Accountant\Recordable as RecordableTrait;
+use App\Contracts\Recordable as RecordableInterface;
+use App\Traits\ModelRecordable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class RecordingModel.
  */
-abstract class RecordingModel extends Model implements Recordable
+abstract class RecordingModel extends Model implements RecordableInterface
 {
-    use RecordableTrait;
+    use ModelRecordable;
 }

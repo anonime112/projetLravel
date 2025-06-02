@@ -1,6 +1,6 @@
 {
   "name": "ckeditor",
-  "version": "4.5.10",
+  "version": "4.22.1",
   "description": "JavaScript WYSIWYG web text editor.",
   "main": "ckeditor.js",
   "repository": {
@@ -27,10 +27,10 @@
   },
   "homepage": "http://ckeditor.com",
   "gitHead": "b889d7d3071a7a9d691e2e89170c745159f9f8c9",
-  "_id": "ckeditor@4.5.10",
+  "_id": "ckeditor@4.22.1",
   "scripts": {},
   "_shasum": "944128336a9a26316640746687b530b716272d27",
-  "_from": "ckeditor@4.5.10",
+  "_from": "ckeditor@4.22.1",
   "_npmVersion": "3.8.6",
   "_nodeVersion": "5.7.0",
   "_npmUser": {
@@ -39,7 +39,7 @@
   },
   "dist": {
     "shasum": "944128336a9a26316640746687b530b716272d27",
-    "tarball": "https://registry.npmjs.org/ckeditor/-/ckeditor-4.5.10.tgz"
+    "tarball": "https://registry.npmjs.org/ckeditor/-/ckeditor-4.22.1.tgz"
   },
   "maintainers": [
     {
@@ -49,8 +49,11 @@
   ],
   "_npmOperationalInternal": {
     "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/ckeditor-4.5.10.tgz_1468418661689_0.8480386324226856"
+    "tmp": "tmp/ckeditor-4.22.1.tgz_1468418661689_0.8480386324226856"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/ckeditor/-/ckeditor-4.5.10.tgz"
+  "_resolved": "https://registry.npmjs.org/ckeditor/-/ckeditor-4.22.1.tgz",
+  "dependencies": {
+    "ckeditor": "file:"
+  }
 }
