@@ -21,7 +21,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>N° Demande</th>
+                
                 <th>Nom Etudiant</th>
                 <th>Type</th>
                 <th>Date</th>
@@ -32,15 +32,30 @@
         <tbody>
         @foreach($demandes as $demande)
             <tr>
-                <td>{{ $demande->id }}</td>
+                
                 <td>{{ $demande->etudiant ? $demande->etudiant->nom . ' ' . $demande->etudiant->prenom : 'Nom non trouvé' }}</td>
-                <td>{{ $demande->type }}</td>
+                <td>{{ $demande->typeDemande ? $demande->typeDemande->nom : 'Type inconnu' }}</td>
                 
                 <td>{{ $demande->created_at ? $demande->created_at->format('d/m/Y H:i') : 'N/A' }}</td>
                 <td>
-                    <span class="badge {{ $demande->est_soldee ? 'bg-success' : 'bg-danger' }}">
-                        {{ $demande->est_soldee ? 'En Cours' : 'Annulé' }}
+                    @php
+                        if (is_null($demande->est_soldee) || $demande->est_soldee === '') {
+                            $badgeColor = 'bg-warning';
+                            $badgeText = 'En Cours';
+                        } elseif ($demande->est_soldee == 1) {
+                            $badgeColor = 'bg-success';
+                            $badgeText = 'Validée';
+                        } else {
+                            $badgeColor = 'bg-danger';
+                            $badgeText = 'Annulée';
+                        }
+                    @endphp
+
+                    <span class="badge {{ $badgeColor }}">
+                        {{ $badgeText }}
                     </span>
+
+
                 </td>
                 <td>
                     <button class="btn btn-info btn-sm" onclick="voirPlus('{{ $demande->id }}')">Voir plus</button>

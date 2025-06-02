@@ -21,7 +21,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>N° Demande</th>
+                
                 <th>Nom Etudiant</th>
                 <th>Type</th>
                 <th>Date</th>
@@ -34,9 +34,9 @@
         <tbody>
         @foreach($demandes as $demande)
             <tr>
-                <td>{{ $demande->id }}</td>
+                
                 <td>{{ $demande->etudiant ? $demande->etudiant->nom . ' ' . $demande->etudiant->prenom : 'Nom non trouvé' }}</td>
-                <td>{{ $demande->type }}</td>
+                <td>{{ $demande->typeDemande ? $demande->typeDemande->nom : 'Type inconnu' }}</td>
                 
                 <td>{{ $demande->created_at ? $demande->created_at->format('d/m/Y H:i') : 'N/A' }}</td>
                 <td>
@@ -147,13 +147,15 @@
         }, 500);
     }
 
+    
+
 
     function updateInterface(data) {
         const row = currentButton.closest('tr');
         const statutBadge = row.querySelector('.badge');
-        const validerButton = row.querySelector('.valider-btn');
+        const validerButton = row.querySelector('.valider-statut-btn');
 
-
+       
         // Afficher le bouton Voir Document dans la cellule correspondante
         const documentCell = row.querySelector('.document-cell');
         if (data.est_soldee) {

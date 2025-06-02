@@ -11,14 +11,13 @@ class Demande extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'id',
-        'etudiant_id',
-        'type',
+        'users_id',
+        'demande_type_id',
         'statut',
         'est_soldee',
-        'canal',
         'commentaire',
-        'fichier_final',
+        'date_emission',
+        'etudiant_id',
         'created_at',
         'updated_at',
     ];
@@ -33,7 +32,17 @@ class Demande extends Model
 
     public function etudiant()
     {
-        return $this->belongsTo(Etudiant::class, 'etudiant_id', 'id');
+        return $this->belongsTo(Etudiant::class, 'etudiant_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'users_id');
+    }
+
+    public function typeDemande()
+    {
+        return $this->belongsTo(DemandeType::class, 'demande_type_id');
     }
 
 }

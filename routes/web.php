@@ -30,6 +30,7 @@ use App\Http\Controllers\Backend\Auth\Table\TableController;
 
 use App\Http\Controllers\DemandeController;
 use App\Http\Controllers\GenPDFController;
+use App\Http\Controllers\PageControll;
 use App\Http\Controllers\Frontend\User\ProfileController;
 /*
 |--------------------------------------------------------------------------
@@ -152,12 +153,11 @@ Route::get('/demandes/{id}', [DemandeController::class, 'show'])->name('demandes
 Route::post('/demandes/{id}/valider', [DemandeController::class, 'valider'])->name('demandes.valider');
 
 
-Route::post('/demandes/{id}/valider-statut', [DemandeController::class, 'validerStatut'])->name('demandes.validerStatut');
-
-
 Route::post('/demandes/{id}/decliner', [DemandeController::class, 'decliner'])->name('demandes.decliner');
 
 Route::get('/demandes/{id}/document', [GenPDFController::class, 'telechargerPdf'])->name('demande.document');
+
+Route::post('/demandes/{id}/valider-statut', [DemandeController::class, 'validerStatut'])->name('demandes.validerStatut');
 
 
 // SECTION DIRECTION 1
@@ -395,7 +395,7 @@ Route::get('eCommerce', [DashboardController::class, 'eCommerce'])->name('eComme
 
 
 
-    use App\Http\Controllers\PageControll;
+   
 
 
 

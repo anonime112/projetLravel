@@ -5,25 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Demande;
 use App\Models\Etudiant;
+use App\Http\Controllers\Log;
 
 class DemandeController extends Controller
 {
    public function index()
     {
-        $demandes = Demande::with('etudiant')->get();
-
+        $demandes = Demande::with(['etudiant', 'typeDemande'])->get();
         return view('backend.table_secre2', compact('demandes'));
     }
     public function index1()
     {
-        $demandes = Demande::with('etudiant')->get();
+        $demandes = Demande::with(['etudiant', 'typeDemande'])->get();
 
         return view('backend.table_secre1', compact('demandes'));
     }
 
     public function index_dirc()
     {
-        $demandes = Demande::with('etudiant')
+        $demandes = Demande::with(['etudiant', 'typeDemande'])
             ->where('est_soldee', 1)
             ->orderBy('created_at', 'desc')
             ->get();
@@ -36,10 +36,9 @@ class DemandeController extends Controller
     public function show($id)
     {
         try {
-            $demande = Demande::with('etudiant')->findOrFail($id);
+            $demande = Demande::with(['etudiant', 'typeDemande'])->findOrFail($id);
             return response()->json([
-                'type' => $demande->type,
-                'canal' => $demande->canal,
+                'type' => $demande->typeDemande ? $demande->typeDemande->nom : 'Type inconnu',
                 'commentaire' => $demande->commentaire ?? 'Aucun commentaire',
                 'statut' => $demande->statut ?? ($demande->est_soldee ? 'En Cours' : 'Annulé'),
                 'etudiant' => $demande->etudiant ? [
@@ -48,7 +47,7 @@ class DemandeController extends Controller
                     'matricule' => $demande->etudiant->matricule,
                     'email' => $demande->etudiant->email,
                     'niveau' => $demande->etudiant->niveau,
-                    'date_inscription' => $demande->etudiant->date_inscription->format('d/m/Y'),
+                    'date_inscription' => optional($demande->etudiant->date_inscription)->format('d/m/Y'),
                 ] : null,
             ]);
         } catch (\Exception $e) {
@@ -58,6 +57,7 @@ class DemandeController extends Controller
             ], 500);
         }
     }
+
 
     public function valider(Request $request, $id)
     {
@@ -83,15 +83,20 @@ class DemandeController extends Controller
     public function validerStatut(Request $request, $id)
     {
         try {
+            Log::info('Début validerStatut', ['id' => $id]);
             $demande = Demande::findOrFail($id);
+            Log::info('Demande trouvée', ['id' => $id, 'statut_actuel' => $demande->statut]);
+
             $demande->statut = 'Validé';
-            $demande->save();
+            $result = $demande->save();
+            Log::info('Sauvegarde effectuée', ['id' => $id, 'result' => $result, 'nouveau_statut' => $demande->statut]);
 
             return response()->json([
                 'success' => true,
                 'statut' => $demande->statut,
             ]);
         } catch (\Exception $e) {
+            Log::error('Erreur dans validerStatut', ['id' => $id, 'error' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
             return response()->json([
                 'success' => false,
                 'error' => $e->getMessage(),
