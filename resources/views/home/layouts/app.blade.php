@@ -16,8 +16,8 @@
         <link rel="stylesheet" href="{{ asset('assets1/css/header.css')}}">
         <link rel="stylesheet" href="{{ asset('assets1/css/responsive.css')}}">
 
-        <title>Canyon - College University HTML Template</title>
-        <link rel="icon" type="image/png" href="{{ asset('assets/img/all-img/favicon.png')}}">
+        <title> campus cocody miage</title>
+        <link rel="icon" type="image/png" href="{{ asset('assets/img/all-img/téléchargement.png')}}">
     </head>
     <body>
 

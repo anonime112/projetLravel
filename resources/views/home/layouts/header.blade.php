@@ -3,8 +3,8 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="{{ route('requests.index')}}">
-                <img class="logo-light" src="{{asset('assets1/img/logo/white-logo.png')}}" alt="logo">
-                <img class="logo-dark" src="{{asset('assets1/img/logo/logo.png')}}" alt="logo">
+                <img class="logo-light" src="{{asset('assets1/img/logo/telechar.png')}}" alt="logo">
+                <img class="logo-dark" src="{{asset('assets1/img/logo/telechar.png')}}" alt="logo">
             </a>
             <div class="other-option d-lg-none">
                 <div class="option-item">
@@ -44,75 +44,14 @@
 
 
                     <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link active">
-                            Home
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{{ route('requests.index')}}" class="nav-link">Home One</a></li>
-                            <li class="nav-item"><a href="index2'" class="nav-link active">Home Two</a></li>
-                            <li class="nav-item"><a href="index3'" class="nav-link">Home Three</a></li>
-                        </ul>
+                       <li class="nav-item"><a href="{{ route('requests.index')}}" class="nav-link">ACCEUIL</a></li>                    
                     </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                            Pages
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{{ route('requests.about-us')}}" class="nav-link">About Us</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.news-and-blog')}}" class="nav-link">News and Blog</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.blog-details')}}" class="nav-link">Blog Details</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.alumni')}}" class="nav-link">Alumni</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                            Academics
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{{ route('requests.academics')}}" class="nav-link">Academics</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.undergraduate')}}" class="nav-link">Undergraduate</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.graduate')}}" class="nav-link">Graduate</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.online-education')}}" class="nav-link">Online Education</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.faculty')}}" class="nav-link">Faculty</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                            Admissions
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{{ route('requests.admission')}}" class="nav-link">Admissions</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.how-to-apply')}}" class="nav-link">How to Apply</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.tuition-fees')}}" class="nav-link">Tuition & Fees</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.financial-aid')}}" class="nav-link">Financial Aid</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.date-deadlines')}}" class="nav-link">Date & Deadlines</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.schedule-tour')}}" class="nav-link">Schedule a Tour</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                            Courses
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{{ route('requests.courses')}}" class="nav-link">Courses Sidebar</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.courses-details')}}" class="nav-link">Course Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                            University Life
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{{ route('requests.university-life')}}" class="nav-link">University Life</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.the-campus-experience')}}" class="nav-link">The Campus Experience</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.fitness-athletics')}}" class="nav-link">Fitness & Athletics</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.support-guidance')}}" class="nav-link">Support & Guidance</a></li>
-                            <li class="nav-item"><a href="{{ route('requests.student-activities')}}" class="nav-link">Student Activities</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item">                 
+                        <li class="nav-item"><a href="{{ route('requests.about-us')}}" class="nav-link">A PROPOS</a></li>
+                    </li>              
                     <li class="nav-item">
                         <a href="{{ route('requests.contact-us')}}" class="nav-link">
-                            Contact
+                            CONTACT
                         </a>
                     </li>
                 </ul>
