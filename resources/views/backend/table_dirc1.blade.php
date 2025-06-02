@@ -27,6 +27,8 @@
                 <th>Date</th>
                 <th>Statut</th>
                 <th>Action</th>
+                
+                
             </tr>
         </thead>
         <tbody>
@@ -39,15 +41,22 @@
                 <td>{{ $demande->created_at ? $demande->created_at->format('d/m/Y H:i') : 'N/A' }}</td>
                 <td>
                     <span class="badge {{ $demande->est_soldee ? 'bg-success' : 'bg-danger' }}">
-                        {{ $demande->est_soldee ? 'En Cours' : 'Annulé' }}
+                        {{ $demande->est_soldee ? 'Validée' : 'Annulée' }}
+
                     </span>
                 </td>
                 <td>
                     <button class="btn btn-info btn-sm" onclick="voirPlus('{{ $demande->id }}')">Voir plus</button>
-                    <button class="btn btn-sm valider-btn {{ is_null($demande->est_soldee) ? 'btn-warning' : ($demande->est_soldee ? 'btn-success' : 'btn-danger') }}" onclick="confirmerPaiement('{{ $demande->id }}', this)">
-                        {{ is_null($demande->est_soldee) ? '⏳' : ($demande->est_soldee ? '✅' : '👍') }}
-                    </button>
+                    <button class="btn btn-success btn-sm valider-statut-btn" onclick="validerStatut('{{ $demande->id }}', this)">✔ Validé</button>
                 </td>
+                <td class="document-cell">
+                    @if($demande->statut === 'Validé')
+                        <a href="{{ route('demande.document', $demande->id) }}" target="_blank" class="btn btn-primary btn-sm">
+                            📄 Voir Document
+                        </a>
+                    @endif
+                </td>
+
             </tr>
         @endforeach
         </tbody>
@@ -82,12 +91,12 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" id="declineBtn" class="btn btn-danger">✖ Décliner</button>
                 <button type="button" id="confirmBtn" class="btn btn-success">Confirmer</button>
             </div>
         </div>
     </div>
 </div>
+
 
 @push('after-scripts')
 <script>
@@ -125,25 +134,40 @@
             .catch(error => console.error('Erreur lors de la récupération des détails:', error));
     }
 
-    function confirmerPaiement(id, button) {
-        console.log('confirmerPaiement appelé avec ID:', id);
+    
+
+    function validerStatut(id, button) {
+        console.log('validerStatut appelé avec ID:', id);
         demandeIdToValider = id;
         currentButton = button;
-        const isSoldee = button.classList.contains('btn-success') ? true : (button.classList.contains('btn-danger') ? false : null);
-        document.getElementById('confirmationText').textContent = isSoldee === null ? 'Soldé' : (isSoldee ? 'Soldé' : 'Soldé');
+        document.getElementById('confirmationText').textContent = 'Validé';
         $('#modalConfirmer').modal('show');
         setTimeout(() => {
             document.getElementById('confirmBtn').focus();
         }, 500);
     }
 
+
     function updateInterface(data) {
         const row = currentButton.closest('tr');
         const statutBadge = row.querySelector('.badge');
         const validerButton = row.querySelector('.valider-btn');
 
+
+        // Afficher le bouton Voir Document dans la cellule correspondante
+        const documentCell = row.querySelector('.document-cell');
+        if (data.est_soldee) {
+            const viewButton = document.createElement('a');
+            viewButton.href = `/demandes/${demandeIdToValider}/document`; // ou route() si besoin
+            viewButton.target = '_blank';
+            viewButton.className = 'btn btn-primary btn-sm';
+            viewButton.textContent = '📄 Voir Document';
+            documentCell.innerHTML = '';
+            documentCell.appendChild(viewButton);
+        }
+
         // Mettre à jour le badge du statut
-        statutBadge.textContent = data.est_soldee === null ? 'En attente' : (data.est_soldee ? 'En Cours' : 'Annulé');
+        statutBadge.textContent = data.est_soldee === null ? 'En attente' : (data.est_soldee ? 'Validée' : 'Annulée');
         statutBadge.classList.remove('bg-success', 'bg-danger', 'bg-warning');
         statutBadge.classList.add(data.est_soldee === null ? 'bg-warning' : (data.est_soldee ? 'bg-success' : 'bg-danger'));
 

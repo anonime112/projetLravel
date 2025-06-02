@@ -29,6 +29,7 @@ use App\Http\Controllerss\Backend\Setting\SettingController;
 use App\Http\Controllers\Backend\Auth\Table\TableController;
 
 use App\Http\Controllers\DemandeController;
+use App\Http\Controllers\GenPDFController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 /*
 |--------------------------------------------------------------------------
@@ -130,6 +131,8 @@ Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
     Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
+
+
 // SECTION SECRETAIRE 1
 Route::prefix('table')->name('table.')->group(function () {
     Route::get('table_secretaire1', [DemandeController::class, 'index1'])->name('secre1');
@@ -147,9 +150,21 @@ Route::prefix('table')->name('table.')->group(function () {
 Route::get('/demandes', [DemandeController::class, 'index'])->name('demandes.index');
 Route::get('/demandes/{id}', [DemandeController::class, 'show'])->name('demandes.show');
 Route::post('/demandes/{id}/valider', [DemandeController::class, 'valider'])->name('demandes.valider');
+
+
+Route::post('/demandes/{id}/valider-statut', [DemandeController::class, 'validerStatut'])->name('demandes.validerStatut');
+
+
 Route::post('/demandes/{id}/decliner', [DemandeController::class, 'decliner'])->name('demandes.decliner');
 
+Route::get('/demandes/{id}/document', [GenPDFController::class, 'telechargerPdf'])->name('demande.document');
 
+
+// SECTION DIRECTION 1
+Route::prefix('table')->name('table.')->group(function () {
+    Route::get('table_demande', [DemandeController::class, 'index_dirc'])->name('dirc1');
+
+});
 
 
 
