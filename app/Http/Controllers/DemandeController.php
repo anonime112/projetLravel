@@ -21,6 +21,18 @@ class DemandeController extends Controller
         return view('backend.table_secre1', compact('demandes'));
     }
 
+    public function index_dirc()
+    {
+        $demandes = Demande::with('etudiant')
+            ->where('est_soldee', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        
+
+        return view('backend.table_dirc1', compact('demandes'));
+    }
+
     public function show($id)
     {
         try {
@@ -58,6 +70,25 @@ class DemandeController extends Controller
             return response()->json([
                 'success' => true,
                 'est_soldee' => $demande->est_soldee,
+                'statut' => $demande->statut,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function validerStatut(Request $request, $id)
+    {
+        try {
+            $demande = Demande::findOrFail($id);
+            $demande->statut = 'Validé';
+            $demande->save();
+
+            return response()->json([
+                'success' => true,
                 'statut' => $demande->statut,
             ]);
         } catch (\Exception $e) {
