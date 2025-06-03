@@ -33,6 +33,18 @@ class DemandeController extends Controller
         return view('backend.table_dirc1', compact('demandes'));
     }
 
+    public function index_dirc_gen()
+    {
+        $demandes = Demande::with(['etudiant', 'typeDemande'])
+            ->where('est_soldee', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        
+
+        return view('backend.table_dirc_gen', compact('demandes'));
+    }
+
     public function show($id)
     {
         try {

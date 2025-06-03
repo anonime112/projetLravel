@@ -1,4 +1,4 @@
-@extends('backend.layouts.app')
+@extends('backend.layouts.app_dirc_gen')
 
 @section('title', config('app_name') . ' :: ' . __('Home'))
 

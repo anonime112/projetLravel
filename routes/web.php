@@ -166,7 +166,11 @@ Route::prefix('table')->name('table.')->group(function () {
 
 });
 
+// SECTION DIRECTION 2
+Route::prefix('table')->name('table.')->group(function () {
+    Route::get('table_demande_gen', [DemandeController::class, 'index_dirc_gen'])->name('dirc_gen');
 
+});
 
 
 
