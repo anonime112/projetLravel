@@ -104,6 +104,18 @@
       jQuery('.breadcrumb').parent().find(".breadcrumb-item:nth-child(2)").removeClass('active');
     });
 
+    function validerStatut(id, btn) {
+        demandeIdToValider = id;
+        currentButton = btn;
+
+        // Affiche le texte dans le modal (optionnel)
+        document.getElementById('confirmationText').textContent = 'Validée';
+
+        // Affiche le modal de confirmation
+        $('#modalConfirmer').modal('show');
+    }
+
+
 
     let demandeIdToValider = null;
     let currentButton = null;
@@ -134,110 +146,54 @@
             .catch(error => console.error('Erreur lors de la récupération des détails:', error));
     }
 
-    
-
-    function validerStatut(id, button) {
-        console.log('validerStatut appelé avec ID:', id);
-        demandeIdToValider = id;
-        currentButton = button;
-        document.getElementById('confirmationText').textContent = 'Validé';
-        $('#modalConfirmer').modal('show');
-        setTimeout(() => {
-            document.getElementById('confirmBtn').focus();
-        }, 500);
-    }
-
-    
 
 
-    function updateInterface(data) {
-        const row = currentButton.closest('tr');
-        const statutBadge = row.querySelector('.badge');
-        const validerButton = row.querySelector('.valider-statut-btn');
-
-       
-        // Afficher le bouton Voir Document dans la cellule correspondante
-        const documentCell = row.querySelector('.document-cell');
-        if (data.est_soldee) {
-            const viewButton = document.createElement('a');
-            viewButton.href = `/demandes/${demandeIdToValider}/document`; // ou route() si besoin
-            viewButton.target = '_blank';
-            viewButton.className = 'btn btn-primary btn-sm';
-            viewButton.textContent = '📄 Voir Document';
-            documentCell.innerHTML = '';
-            documentCell.appendChild(viewButton);
+   document.getElementById('confirmBtn').addEventListener('click', function () {
+    fetch(`/demandes/${demandeIdToValider}/valider-statut`, {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': '{{ csrf_token() }}',
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Mise à jour visuelle
+            const row = currentButton.closest('tr');
+            const statutBadge = row.querySelector('td:nth-child(4) .badge');
+            const documentCell = row.querySelector('.document-cell');
 
-        // Mettre à jour le badge du statut
-        statutBadge.textContent = data.est_soldee === null ? 'En attente' : (data.est_soldee ? 'Validée' : 'Annulée');
-        statutBadge.classList.remove('bg-success', 'bg-danger', 'bg-warning');
-        statutBadge.classList.add(data.est_soldee === null ? 'bg-warning' : (data.est_soldee ? 'bg-success' : 'bg-danger'));
+            // Changer badge
+            statutBadge.classList.remove('bg-danger');
+            statutBadge.classList.add('bg-success');
+            statutBadge.textContent = 'Validée';
 
-        // Mettre à jour uniquement le bouton Valider
-        validerButton.classList.remove('btn-success', 'btn-danger', 'btn-warning');
-        validerButton.classList.add(data.est_soldee === null ? 'btn-warning' : (data.est_soldee ? 'btn-success' : 'btn-danger'));
-        validerButton.textContent = data.est_soldee === null ? '⏳' : (data.est_soldee ? '✅' : '👍');
+            // Supprimer bouton
+            currentButton.remove();
 
-        $('#modalConfirmer').modal('hide');
-    }
+            // Ajouter bouton Voir Document
+            documentCell.innerHTML = `
+                <a href="${data.document_url}" target="_blank" class="btn btn-primary btn-sm">
+                    📄 Voir Document
+                </a>
+            `;
 
-    document.getElementById('confirmBtn').addEventListener('click', function () {
-        console.log('Bouton Confirmer cliqué, ID:', demandeIdToValider);
-        fetch(`/demandes/${demandeIdToValider}/valider`, {
-            method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-        .then(res => {
-            console.log('Statut de la réponse:', res.status, res.statusText);
-            return res.json();
-        })
-        .then(data => {
-            console.log('Données reçues:', data);
-            if (data.success) {
-                updateInterface(data);
-            } else {
-                console.error('Erreur côté serveur:', data.error);
-                alert('Erreur lors de la validation: ' + data.error);
-            }
-        })
-        .catch(error => {
-            console.error('Erreur lors de la validation:', error);
-            alert('Erreur réseau ou serveur: ' + error.message);
-        });
+            $('#modalConfirmer').modal('hide');
+        } else {
+            alert('Erreur : ' + (data.message || 'Impossible de valider la demande.'));
+        }
+    })
+    .catch(error => {
+        console.error('Erreur de validation:', error);
+        alert('Erreur réseau ou serveur : ' + error.message);
     });
+});
 
-    document.getElementById('declineBtn').addEventListener('click', function () {
-        console.log('Bouton Décliner cliqué, ID:', demandeIdToValider);
-        fetch(`/demandes/${demandeIdToValider}/decliner`, {
-            method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-        .then(res => {
-            console.log('Statut de la réponse:', res.status, res.statusText);
-            return res.json();
-        })
-        .then(data => {
-            console.log('Données reçues:', data);
-            if (data.success) {
-                updateInterface(data);
-            } else {
-                console.error('Erreur côté serveur:', data.error);
-                alert('Erreur lors du déclin: ' + data.error);
-            }
-        })
-        .catch(error => {
-            console.error('Erreur lors du déclin:', error);
-            alert('Erreur réseau ou serveur: ' + error.message);
-        });
-    });
+
+    
+
 </script>
 
 @endpush

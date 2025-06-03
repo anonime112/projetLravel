@@ -83,20 +83,17 @@ class DemandeController extends Controller
     public function validerStatut(Request $request, $id)
     {
         try {
-            Log::info('Début validerStatut', ['id' => $id]);
             $demande = Demande::findOrFail($id);
-            Log::info('Demande trouvée', ['id' => $id, 'statut_actuel' => $demande->statut]);
-
             $demande->statut = 'Validé';
-            $result = $demande->save();
-            Log::info('Sauvegarde effectuée', ['id' => $id, 'result' => $result, 'nouveau_statut' => $demande->statut]);
+            $demande->est_soldee = true; // si tu veux aussi marquer comme soldée
+            $demande->save();
 
             return response()->json([
                 'success' => true,
-                'statut' => $demande->statut,
+                'demande' => $demande,
+                'document_url' => route('demande.document', $demande->id)
             ]);
         } catch (\Exception $e) {
-            Log::error('Erreur dans validerStatut', ['id' => $id, 'error' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
             return response()->json([
                 'success' => false,
                 'error' => $e->getMessage(),
