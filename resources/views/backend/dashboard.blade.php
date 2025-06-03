@@ -9,6 +9,14 @@
             <div class="card planned_task">
                 <div class="header">
                     <h2>Welcome Etudiant</h2>
+
+                    @if(Auth::check())
+                        <i class="fas fa-envelope"></i> {{ auth()->user()->role }}<br/>
+                        <i class="fas fa-envelope"></i> {{ auth()->user()->email }}<br/>
+           
+                        @else 
+                            <a href="{{ route('frontend.auth.login')}}" class="default-btn">CONNECT</a>
+                        @endif 
                     <ul class="header-dropdown">
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>

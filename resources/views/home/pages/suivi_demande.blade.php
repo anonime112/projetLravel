@@ -38,31 +38,19 @@
                         </div>
                         <div class="widget widget-catagories">
                             <h3 class="widget-title">
-                                Categories
+                                statistique
                             </h3>
 
                             <ul>
-                                <li>
-                                    <h3><a href="#">Admission</a></h3> <span>(6)</span>
-                                </li>
-                                <li>
-                                    <h3><a href="#">Alumni</a></h3> <span>(11)</span>
-                                </li>
-                                <li>
-                                    <h3><a href="#">Career</a></h3> <span>(9)</span>
-                                </li>
-                                <li>
-                                    <h3><a href="#">Research</a></h3> <span>(12)</span>
-                                </li>
-                                <li>
-                                    <h3><a href="#">Spotlight</a></h3> <span>(2)</span>
-                                </li>
-                                <li>
-                                    <h3><a href="#">Student life</a></h3> <span>(5)</span>
-                                </li>
-                                <li>
-                                    <h3><a href="#">Student story</a></h3> <span>(21)</span>
-                                </li>
+                               
+
+                                @foreach($demandeCounts as $type)
+                                    <li>
+                                        <h3><a href="#">{{ $type->nom }}</a></h3>
+                                        <span>({{ $type->user_count }})</span>
+                                    </li>
+                                @endforeach
+
                             </ul>
 
                         </div>
@@ -102,9 +90,7 @@
                 <div class="col-lg-8">
 
                     <div class="content-pra">
-                        <div class="title">
-                            <h3>Learning Objectives</h3>
-                        </div>
+                 
 
                     </div>
 
@@ -130,14 +116,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div
-                                    class="project-search project-search--height global-shadow ms-md-20 my-10 order-md-2 order-1">
-                                    <form action="/" class="d-flex align-items-center user-member__form">
-                                        <img src="img/svg/search.svg" alt="search" class="svg">
-                                        <input class="form-control me-sm-2 border-0 box-shadow-none" type="search"
-                                            placeholder="Search by Name" aria-label="Search">
-                                    </form>
-                                </div>
+                     
                             </div>
                             <div class="project-top-right d-flex flex-wrap">
 
@@ -157,74 +136,61 @@
                                     <div class="row">
                                         <div class="col-xl-12 mb-25 col-md-12 widget-area widget">
 
-                                            <div
-                                                class="user-group radius-xl media-ui media-ui--early pt-30 pb-25 widget-area widget ">
-                                                <div class="border-bottom px-30">
-                                                    <div class="media user-group-media d-flex justify-content-between">
-                                                        <div
-                                                            class="media-body d-flex align-items-center flex-wrap text-capitalize my-sm-0 my-n2">
-                                                            <a href="application-ui.html">
-                                                                <h6
-                                                                    class="mt-0  fw-500 user-group media-ui__title bg-transparent">
-                                                                    Dashboard UI Project</h6>
-                                                            </a>
-                                                            <span
-                                                                class="my-sm-0 my-2 media-badge text-uppercase color-white bg-primary">early</span>
+                                            @foreach($demandes as $demande)
+                                                <div
+                                                    class="user-group radius-xl media-ui media-ui--early pt-30 pb-25 widget-area widget ">
+                                                    <div class="border-bottom px-30">
+                                                        <div class="media user-group-media d-flex justify-content-between">
+                                                            <div
+                                                                class="media-body d-flex align-items-center flex-wrap text-capitalize my-sm-0 my-n2">
+                                                                <a href="#">
+                                                                    <h6
+                                                                        class="mt-0 fw-500 user-group media-ui__title bg-transparent">
+                                                                        {{ $demande->type->nom }}
+                                                                    </h6>
+                                                                </a>
+                                                             
+                                                            </div>
+                                                            <div class="mt-n15">
+                                                                
+                                                            </div>
                                                         </div>
-                                                        <div class="mt-n15">
-                                                            <div class="dropdown dropleft">
-                                                                <button class="btn-link border-0 bg-transparent p-0"
-                                                                    data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false">
-                                                                    <img src="img/svg/more-horizontal.svg"
-                                                                        alt="more-horizontal" class="svg">
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">view</a>
-                                                                    <a class="dropdown-item" href="#">edit</a>
-                                                                    <a class="dropdown-item" href="#">leave</a>
-                                                                    <a class="dropdown-item" href="#">delete</a>
+                                                        <div class="user-group-people mt-15 text-capitalize">
+                                                            <p>{{ $demande->type->description }}</p>
+                                                            <div class="user-group-project">
+                                                                <div class="d-flex align-items-center user-group-progress-top">
+                                                                    <div class="media-ui__start">
+                                                                        <span class="color-light fs-12">Date d'émission</span>
+                                                                        <p class="fs-14 fw-500 color-dark mb-0">
+                                                                        {{ \Carbon\Carbon::parse($demande->created_at)->format('d/m/Y') }}   </p>
+                                                                    </div>
+                                                                    <div class="media-ui__end">
+                                                                        <span class="color-light fs-12">État</span>
+                                                                        <p class="fs-16 fw-500 color-success mb-0">
+                                                                            {{ ucfirst($demande->statut ?? 'en attente') }}</p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="user-group-people mt-15 text-capitalize">
-                                                        <p>Lorem ipsum dolor amet, consetetur sadipscing elitr sed diam
-                                                            nonumy
-                                                            eirmod dolor ame.</p>
-                                                        <div class="user-group-project">
-                                                            <div class="d-flex align-items-center user-group-progress-top">
-                                                                <div class="media-ui__start">
-                                                                    <span class="color-light fs-12">Start Date</span>
-                                                                    <p class="fs-14 fw-500 color-dark mb-0">26 Dec 2019</p>
+
+                                                        <div class="user-group-progress-bar">
+                                                            <div class="progress-wrap d-flex align-items-center mb-0">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar bg-primary" role="progressbar"
+                                                                        style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
                                                                 </div>
-                                                                <div class="media-ui__end">
-                                                                    <span class="color-light fs-12">end date</span>
-                                                                    <p class="fs-16 fw-500 color-success mb-0">18 Mar 2020
-                                                                    </p>
-                                                                </div>
+                                                              
                                                             </div>
+                                                            <p class="color-light fs-12 mb-20">0 /
+                                                               
+                                                                validées</p>
+                                                                
                                                         </div>
+                                                        
                                                     </div>
-                                                    <div class="user-group-progress-bar">
 
-                                                        <div class="progress-wrap d-flex align-items-center mb-0">
-                                                            <div class="progress">
-                                                                <div class="progress-bar bg-primary" role="progressbar"
-                                                                    style="width: 83%;" aria-valuenow="83" aria-valuemin="0"
-                                                                    aria-valuemax="100"></div>
-                                                            </div>
-
-
-                                                            <span class="progress-percentage">83%</span>
-
-
-                                                        </div>
-
-                                                        <p class="color-light fs-12 mb-20">12 / 15 tasks completed</p>
-                                                    </div>
-                                                </div>
-                                                <div class="checkout-progress justify-content-center">
+                                                    <div class="checkout-progress justify-content-center">
                                                     <div class="step completed" id="1">
                                                         <span class="las la-check"></span>
 
@@ -248,7 +214,9 @@
 
                                                     </div>
                                                 </div>
-                                            </div>
+                                                </div>
+                                            @endforeach
+
 
                                         </div>
 

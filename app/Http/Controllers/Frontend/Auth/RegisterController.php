@@ -9,7 +9,8 @@ use App\Repositories\Frontend\Auth\UserRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Roles;
+use App\Models\RoleUser;
 /**
  * Class RegisterController.
  */
@@ -39,9 +40,13 @@ class RegisterController extends Controller
      */
     public function redirectPath(): string
     {
-        return route('index');
+        return route('shoose_role');
     }
 
+    public function redirectRole(): string
+    {
+        return route('index');
+    }
     /**
      * Affiche le formulaire d'enregistrement.
      */
@@ -51,6 +56,14 @@ class RegisterController extends Controller
         return view('frontend.auth.register');
     }
 
+    public function showRoleSelectionForm()
+    {
+        return view('frontend.auth.choose_role');
+    }
+    public function showCodeRoleSelectionForm()
+    {$roles = Roles::select('id', 'titre')->distinct()->get();
+        return view('frontend.auth.code_role',compact('roles'));
+    }
     /**
      * Gère la logique d'enregistrement d'un nouvel utilisateur.
      */

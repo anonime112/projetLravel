@@ -13,6 +13,7 @@ use App\Models\Auth\Traits\Attribute\UserAttribute;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Auth\Traits\Relationship\UserRelationship;
 use Illuminate\Support\Facades\Storage;
+use App\Models\RoleUser;
 
 
 /**
@@ -67,6 +68,12 @@ class User extends Authenticatable
         'last_login_at',
         'last_login_ip',
     ];
+
+
+    public function roleUser()
+{
+    return $this->hasOne(RoleUser::class);
+}
 
     /**
      * The dynamic attributes from mutators that should be returned with the user object.

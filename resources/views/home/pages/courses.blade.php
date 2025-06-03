@@ -48,7 +48,212 @@
                             <div class="col-lg-6 col-sm-6 col-md-6">
                                 <div class="course-item">
                                     <div class="image">
-                                        <img src="assets/img/all-img/courses-image-1.png" alt="image">
+                                        <img src="{{asset('assets1/img/all-img/courses-image-1.png')}}" alt="image">
+                                    </div>
+                                    <div class="content">
+                                        <span>October 4,2024</span>
+                                        <h2><a href="#">Environmental Science and Sustainability</a></h2>
+                                        <ul>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-1.png')}}" alt="image"> 
+                                                </div>
+                                                <span>432</span>
+                                            </li>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-2.png')}}" alt="image"> 
+                                                </div>
+                                                <span>1.2k</span>
+                                            </li>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-3.png')}}" alt="image"> 
+                                                </div>
+                                                <span>5.0</span>
+                                            </li>
+                                        </ul>
+                    
+                                        <div class="teacher-info">
+                                            <div class="image">
+                                                <img src="{{asset('assets1/img/all-img/teacher-img.png')}}" alt="image">
+                                                <p>With <span>Anthony Steven</span></p>
+                                            </div>
+                                            <div class="price">
+                                                <p>Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <div class="course-item">
+                                    <div class="image">
+                                        <img src="{{asset('assets1/img/all-img/courses-image-3.png')}}" alt="image">
+                                    </div>
+                                    <div class="content">
+                                        <span>October 4,2024</span>
+                                        <h2><a href="#">Environmental Science and Sustainability</a></h2>
+                                        <ul>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-1.png')}}" alt="image"> 
+                                                </div>
+                                                <span>432</span>
+                                            </li>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="assets/img/icon/icon-2.png" alt="image"> 
+                                                </div>
+                                                <span>1.2k</span>
+                                            </li>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="assets/img/icon/icon-3.png" alt="image"> 
+                                                </div>
+                                                <span>5.0</span>
+                                            </li>
+                                        </ul>
+                    
+                                        <div class="teacher-info">
+                                            <div class="image">
+                                                <img src="{{asset('assets1/img/all-img/teacher-img.png')}}" alt="image">
+                                                <p>With <span>Anthony Steven</span></p>
+                                            </div>
+                                            <div class="price">
+                                                <p>Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <div class="course-item">
+                                    <div class="image">
+                                        <img src="{{asset('assets1/img/all-img/courses-image-4.png')}}" alt="image">
+                                    </div>
+                                    <div class="content">
+                                        <span>October 4,2024</span>
+                                        <h2><a href="#">Environmental Science and Sustainability</a></h2>
+                                        <ul>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-1.png')}}" alt="image"> 
+                                                </div>
+                                                <span>432</span>
+                                            </li>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-2.png')}}" alt="image"> 
+                                                </div>
+                                                <span>1.2k</span>
+                                            </li>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-3.png')}}" alt="image"> 
+                                                </div>
+                                                <span>5.0</span>
+                                            </li>
+                                        </ul>
+                    
+                                        <div class="teacher-info">
+                                            <div class="image">
+                                                <img src="{{asset('assets1/img/all-img/teacher-img.png')}}" alt="image">
+                                                <p>With <span>Anthony Steven</span></p>
+                                            </div>
+                                            <div class="price">
+                                                <p>Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <div class="course-item">
+                                    <div class="image">
+                                        <img src="{{asset('assets1/img/all-img/courses-image-5.png')}}" alt="image">
+                                    </div>
+                                    <div class="content">
+                                        <span>October 4,2024</span>
+                                        <h2><a href="#">Environmental Science and Sustainability</a></h2>
+                                        <ul>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-1.png')}}" alt="image"> 
+                                                </div>
+                                                <span>432</span>
+                                            </li>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-2.png')}}" alt="image"> 
+                                                </div>
+                                                <span>1.2k</span>
+                                            </li>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-3.png')}}" alt="image"> 
+                                                </div>
+                                                <span>5.0</span>
+                                            </li>
+                                        </ul>
+                    
+                                        <div class="teacher-info">
+                                            <div class="image">
+                                                <img src="{{asset('assets1/img/all-img/teacher-img.png')}}" alt="image">
+                                                <p>With <span>Anthony Steven</span></p>
+                                            </div>
+                                            <div class="price">
+                                                <p>Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <div class="course-item">
+                                    <div class="image">
+                                        <img src="{{asset('assets1/img/all-img/courses-image-6.png')}}" alt="image">
+                                    </div>
+                                    <div class="content">
+                                        <span>October 4,2024</span>
+                                        <h2><a href="#">Environmental Science and Sustainability</a></h2>
+                                        <ul>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-1.png')}}" alt="image"> 
+                                                </div>
+                                                <span>432</span>
+                                            </li>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="{{asset('assets1/img/icon/icon-2.png')}}" alt="image"> 
+                                                </div>
+                                                <span>1.2k</span>
+                                            </li>
+                                            <li>
+                                                <div class="image-circle">
+                                                    <img src="assets/img/icon/icon-3.png" alt="image"> 
+                                                </div>
+                                                <span>5.0</span>
+                                            </li>
+                                        </ul>
+                    
+                                        <div class="teacher-info">
+                                            <div class="image">
+                                                <img src="{{asset('assets1/img/all-img/teacher-img.png')}}" alt="image">
+                                                <p>With <span>Anthony Steven</span></p>
+                                            </div>
+                                            <div class="price">
+                                                <p>Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <div class="course-item">
+                                    <div class="image">
+                                        <img src="{{asset('assets1/img/all-img/courses-image-7.png')}}" alt="image">
                                     </div>
                                     <div class="content">
                                         <span>October 4,2024</span>
@@ -89,212 +294,7 @@
                             <div class="col-lg-6 col-sm-6 col-md-6">
                                 <div class="course-item">
                                     <div class="image">
-                                        <img src="assets/img/all-img/courses-image-3.png" alt="image">
-                                    </div>
-                                    <div class="content">
-                                        <span>October 4,2024</span>
-                                        <h2><a href="#">Environmental Science and Sustainability</a></h2>
-                                        <ul>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-1.png" alt="image"> 
-                                                </div>
-                                                <span>432</span>
-                                            </li>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-2.png" alt="image"> 
-                                                </div>
-                                                <span>1.2k</span>
-                                            </li>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-3.png" alt="image"> 
-                                                </div>
-                                                <span>5.0</span>
-                                            </li>
-                                        </ul>
-                    
-                                        <div class="teacher-info">
-                                            <div class="image">
-                                                <img src="assets/img/all-img/teacher-img.png" alt="image">
-                                                <p>With <span>Anthony Steven</span></p>
-                                            </div>
-                                            <div class="price">
-                                                <p>Free</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-md-6">
-                                <div class="course-item">
-                                    <div class="image">
-                                        <img src="assets/img/all-img/courses-image-4.png" alt="image">
-                                    </div>
-                                    <div class="content">
-                                        <span>October 4,2024</span>
-                                        <h2><a href="#">Environmental Science and Sustainability</a></h2>
-                                        <ul>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-1.png" alt="image"> 
-                                                </div>
-                                                <span>432</span>
-                                            </li>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-2.png" alt="image"> 
-                                                </div>
-                                                <span>1.2k</span>
-                                            </li>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-3.png" alt="image"> 
-                                                </div>
-                                                <span>5.0</span>
-                                            </li>
-                                        </ul>
-                    
-                                        <div class="teacher-info">
-                                            <div class="image">
-                                                <img src="assets/img/all-img/teacher-img.png" alt="image">
-                                                <p>With <span>Anthony Steven</span></p>
-                                            </div>
-                                            <div class="price">
-                                                <p>Free</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-md-6">
-                                <div class="course-item">
-                                    <div class="image">
-                                        <img src="assets/img/all-img/courses-image-5.png" alt="image">
-                                    </div>
-                                    <div class="content">
-                                        <span>October 4,2024</span>
-                                        <h2><a href="#">Environmental Science and Sustainability</a></h2>
-                                        <ul>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-1.png" alt="image"> 
-                                                </div>
-                                                <span>432</span>
-                                            </li>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-2.png" alt="image"> 
-                                                </div>
-                                                <span>1.2k</span>
-                                            </li>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-3.png" alt="image"> 
-                                                </div>
-                                                <span>5.0</span>
-                                            </li>
-                                        </ul>
-                    
-                                        <div class="teacher-info">
-                                            <div class="image">
-                                                <img src="assets/img/all-img/teacher-img.png" alt="image">
-                                                <p>With <span>Anthony Steven</span></p>
-                                            </div>
-                                            <div class="price">
-                                                <p>Free</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-md-6">
-                                <div class="course-item">
-                                    <div class="image">
-                                        <img src="assets/img/all-img/courses-image-6.png" alt="image">
-                                    </div>
-                                    <div class="content">
-                                        <span>October 4,2024</span>
-                                        <h2><a href="#">Environmental Science and Sustainability</a></h2>
-                                        <ul>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-1.png" alt="image"> 
-                                                </div>
-                                                <span>432</span>
-                                            </li>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-2.png" alt="image"> 
-                                                </div>
-                                                <span>1.2k</span>
-                                            </li>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-3.png" alt="image"> 
-                                                </div>
-                                                <span>5.0</span>
-                                            </li>
-                                        </ul>
-                    
-                                        <div class="teacher-info">
-                                            <div class="image">
-                                                <img src="assets/img/all-img/teacher-img.png" alt="image">
-                                                <p>With <span>Anthony Steven</span></p>
-                                            </div>
-                                            <div class="price">
-                                                <p>Free</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-md-6">
-                                <div class="course-item">
-                                    <div class="image">
-                                        <img src="assets/img/all-img/courses-image-7.png" alt="image">
-                                    </div>
-                                    <div class="content">
-                                        <span>October 4,2024</span>
-                                        <h2><a href="#">Environmental Science and Sustainability</a></h2>
-                                        <ul>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-1.png" alt="image"> 
-                                                </div>
-                                                <span>432</span>
-                                            </li>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-2.png" alt="image"> 
-                                                </div>
-                                                <span>1.2k</span>
-                                            </li>
-                                            <li>
-                                                <div class="image-circle">
-                                                    <img src="assets/img/icon/icon-3.png" alt="image"> 
-                                                </div>
-                                                <span>5.0</span>
-                                            </li>
-                                        </ul>
-                    
-                                        <div class="teacher-info">
-                                            <div class="image">
-                                                <img src="assets/img/all-img/teacher-img.png" alt="image">
-                                                <p>With <span>Anthony Steven</span></p>
-                                            </div>
-                                            <div class="price">
-                                                <p>Free</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-md-6">
-                                <div class="course-item">
-                                    <div class="image">
-                                        <img src="assets/img/all-img/courses-image-8.png" alt="image">
+                                        <img src="{{asset('assets1/img/all-img/courses-image-8.png')}}" alt="image">
                                     </div>
                                     <div class="content">
                                         <span>October 4,2024</span>

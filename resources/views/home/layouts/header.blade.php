@@ -122,17 +122,30 @@
 
                         </ul>
                     </li>
+                    <li class="nav-item">
+                    
+                    <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                    @if(Auth::check())
+                        <i class="fas fa-envelope"></i> {{ auth()->user()->role }}<br/>
+                        <i class="fas fa-envelope"></i> {{ auth()->user()->name }}<br/>
+                    </a>
+                    <ul class="dropdown-menu">
+                      
+                        <li class="nav-item"><a href="{{ route('frontend.auth.logout') }}" class="nav-link">deconnect</a></li>
+
+                    </ul>
+                    @else 
+                            <a href="{{ route('frontend.auth.login')}}" class="default-btn">CONNECT</a>
+                        @endif 
+                    
+                </li>
                 </ul>
                 <div class="others-option d-flex align-items-center">
                     <div class="option-item">
                         <div class="nav-btn">
-                        @if(Auth::check())
-                        <i class="fas fa-envelope"></i> {{ auth()->user()->role }}<br/>
-                        <i class="fas fa-envelope"></i> {{ auth()->user()->name }}<br/>
+                 
            
-                        @else 
-                            <a href="{{ route('frontend.auth.login')}}" class="default-btn">CONNECT</a>
-                        @endif 
+                    
                         </div>
                     </div>
                     <div class="option-item">

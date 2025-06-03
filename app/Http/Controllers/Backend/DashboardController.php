@@ -51,21 +51,27 @@ class DashboardController extends Controller
 
     public function secre1()
     {
-        return view('backend.dashboard_secre1');
+        $demandes = session('demandes');
+        
+        return view('backend.dashboard_secre1', compact('demandes'));
     }
 
     public function secre2()
     {
-        return view('backend.dashboard_secre2');
+        $demandes = session('demandes');
+        return view('backend.dashboard_secre2', compact('demandes'));
     }
 
     public function dirc1()
+
     {
-        return view('backend.dashboard_dirc1');
+        $demandes = session('demandes');
+        return view('backend.dashboard_dirc1', compact('demandes'));
     }
 
     public function dirc2()
     {
-        return view('backend.dashboard_dirc2');
+        $demandes = session('demandes');
+        return view('backend.dashboard_dirc2', compact('demandes'));
     }
 }

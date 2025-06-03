@@ -208,6 +208,9 @@ p {
 .current {
   width: 64%;
 }
+.media-ui__start{
+padding-right: 3em;
+}
 
 
 

@@ -44,6 +44,9 @@ Route::prefix('')->name('frontend.')->group(function () {
 
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::post('/valid', [HomeController::class, 'valid'])->name('valide_code');
+
+Route::post('/choose', [HomeController::class, 'choix'])->name('choose');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 
@@ -51,6 +54,9 @@ Route::post('contact/send', [ContactController::class, 'send'])->name('contact.s
 
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+
+Route::get('/role_code', [RegisterController::class, 'showCodeRoleSelectionForm'])->name('role_code');
+Route::get('/choose_role', [RegisterController::class, 'showRoleSelectionForm'])->name('shoose_role');
 Route::get('lang/{lang}', [LanguageController::class, 'swap']);
 Route::get('/index', [HomeController::class, 'index'])->name('frontend.index');
 /*
@@ -88,6 +94,8 @@ Route::prefix('')->name('frontend.')->group(function () {
             // Register
             Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
             Route::post('register', [RegisterController::class, 'register'])->name('register.post');
+            // Route::post('hoisir-role', [RegisterController::class, 'showRoleSelectionForm'])->name('register.post');
+
 
             // Account confirmation
             Route::get('account/confirm/{token}', [ConfirmAccountController::class, 'confirm'])->name('account.confirm');
@@ -397,11 +405,17 @@ Route::get('eCommerce', [DashboardController::class, 'eCommerce'])->name('eComme
         Route::get('/contact-us', [PageControll::class, 'show'])->defaults('page', 'contact-us')->name('contact-us');
         Route::get('/home-two', [PageControll::class, 'show'])->defaults('page', 'home-two')->name('home-two');
         Route::get('/home-three', [PageControll::class, 'show'])->defaults('page', 'home-three')->name('home-three');
-        Route::get('/demande', [PageControll::class, 'show'])->defaults('page', 'demande')->name('demande');
-        Route::get('/demande-details', [PageControll::class, 'show'])->defaults('page', 'demande-details')->name('demande-details');
-        Route::get('/suivi_demande', [PageControll::class, 'show'])->defaults('page', 'suivi_demande')->name('suivi_demande');
+        Route::get('/demande', [PageControll::class, 'show_demande'])->defaults('page', 'demande')->name('demande');
+        Route::get('/demande-details', [PageControll::class, 'show_demande'])->defaults('page', 'demande-details')->name('demande-details');
+        Route::get('/suivi_demande', [PageControll::class, 'sidebarDemandeStats'])->defaults('page', 'suivi_demande')->name('suivi_demande');
+        Route::get('/demande-type/{id}', [PageControll::class, 'show_details'])->name('demande-type.show');
+        Route::post('/demande/{demande_type_id}/create', [PageControll::class, 'store'])->name('demande.store');
+
 
 
 
     });
+    
+
+
     
