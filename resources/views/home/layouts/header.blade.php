@@ -3,8 +3,8 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="{{ route('requests.index')}}">
-                <img class="logo-light" src="{{asset('assets1/img/logo/telechar.png')}}" alt="logo">
-                <img class="logo-dark" src="{{asset('assets1/img/logo/telechar.png')}}" alt="logo">
+                <img class="logo-light" src="{{asset('assets1/img/logo/telechar.png')}}" alt="logo" style="height: 70px;">
+                <img class="logo-dark" src="{{asset('assets1/img/logo/telechar.png')}}" alt="logo" style="height: 70px;">
             </a>
             <div class="other-option d-lg-none">
                 <div class="option-item">
@@ -63,7 +63,7 @@
                         <i class="fas fa-envelope"></i> {{ auth()->user()->name }}<br/>
            
                         @else 
-                            <a href="{{ route('frontend.auth.login')}}" class="default-btn">CONNECT</a>
+                            <a href="{{ route('frontend.auth.login')}}" class="default-btn">SE CONNECTER</a>
                         @endif 
                         </div>
                     </div>
@@ -337,9 +337,7 @@
     <!-- Start Clgun Searchbar Area -->
     <div class="clgun offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop">
         <div class="offcanvas-header">
-            <a href="{{ route('requests.index')}}" class="logo">
-                <img src="{{asset('assets/img/logo/logo.png')}}" alt="image">
-            </a>
+          
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -347,40 +345,16 @@
                 <div class="searchwrapper"> 
                     <div class="searchbox"> 
                         <div class="row align-items-center"> 
-                            <div class="col-md-9"><input type="text" class="form-control" placeholder="Fiend Your Course Here!"></div> 
+                            <div class="col-md-9"><input type="text" class="form-control" placeholder=""></div> 
                             <div class="col-lg-3"> 
-                                <a class="btn" href="#">Search</a> 
+                                <a class="btn" href="#">recherche</a> 
                             </div> 
                         </div> 
                     </div>
                 </div>
             </div>
 
-            <div class="offcanvas-contact-info">
-                <h4>Contact Info</h4>
-                <ul class="contact-info list-style">
-                    <li>
-                        <i class="bx bxs-time"></i>
-                        <p>Mon - Fri: 9:00 - 18:00</p>
-                    </li>
-                    <li><i class="bx bxs-phone-call"></i> General Inquiries - <a href="tel:+8495160885">(849) 516-0885</a></li>
-                    <li>
-                        <i class="bx bxs-envelope"></i>
-                        <a href="contact@Clgunme.edu">contact@Clgunme.edu</a>
-                    </li>
-                    <li>
-                        <i class="bx bxs-map"></i>
-                        <p>404 Camino Del Rio S, Suite 102San Diego, CA 92108</p>
-                    </li>
-                </ul>
-                <ul class="social-profile list-style">
-                    <li><a href="https://www.fb.com" target="_blank"><i class='bx bxl-facebook'></i></a></li>
-                    <li><a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a></li>
-                    <li><a href="https://www.twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-                    <li><a href="https://www.dribbble.com" target="_blank"><i class='bx bxl-dribbble'></i></a></li>
-                    <li><a href="https://www.linkedin.com" target="_blank"><i class='bx bxl-linkedin' ></i></a></li>
-                </ul>
-            </div>
+            
 
         </div>
     </div>

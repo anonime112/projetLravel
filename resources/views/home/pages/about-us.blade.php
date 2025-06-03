@@ -5,150 +5,55 @@
 @section('content')
 
         <!-- Start Section Banner Area -->
-        <div class="section-banner bg-1">
+        <div class="section-banner bg-1" style="
+         background-image: url('{{asset('assets1/img/all-img/vidal.jpg')}}');">
             <div class="container">
                 <div class="banner-spacing">
                     <div class="section-info">
-                        <h2 data-aos="fade-up" data-aos-delay="100">About Us</h2>
-                        <p data-aos="fade-up" data-aos-delay="200">Clgun University is more than just a place of learning; it's a place where dreams take flight, where ideas flourish, and where you'll find the support and...</p>
+                        <h2 data-aos="fade-up" data-aos-delay="100">A PROPOS</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises) forme des professionnels capables de concevoir, développer et piloter des systèmes d'information adaptés aux besoins des entreprises.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Section Banner Area -->
-
-        <!-- Start About Us Area -->
-        <div class="about-us-area ptb-100">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 col-md-12">
-                        <div class="text-content" data-aos="fade-up" data-aos-delay="100">
-                            <div class="sub-title">
-                                <i class='bx bxs-graduation'></i> <p>About Our University</p>
-                            </div>
-                             <h2 class="title-anim">Where Knowledge Meets Innovation</h2>
-                            <p class="title-anim">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tem incid idunt ut labore et dolore magna aliqua. Ut enim ad minim iam quis nostrud xerci tation ulla mco laboris nisi ut</p>
-                            <a class="default-btn" href="schedule-tour.html">Schedule A Tour</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-7">
-                        <div class="row justify-content-end">
-                            <div class="col-lg-6 col-sm-6 col-md-6">
-                                <div class="content" data-aos="fade-right" data-aos-delay="100">
-                                <img src="assets/img/all-img/about-image.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-md-6">
-                                <div class="notice-content" data-aos="fade-right" data-aos-delay="200">
-                                    <i class='bx bxs-quote-left'></i>
-                                    <h4 class="title-anim">Knowledge Beyond Boundaries</h4>
-                                    <p class="title-anim">Lorem ipsum dolor sit ametco nsectetur adipcing elit sed doe iusm tem incid idunt ut labore et dolore magna aliqua.</p>
-                                    <div class="author-info">
-                                        <span>John Michael</span>
-                                        <h5>John Michael</h5>
-                                        <p>Founder</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End About Us Area -->
-
-        <!-- Start Academics Area -->
-        <div class="academics-area bg-color-1 ptb-100" >
-            <div class="container">
-                <div class="section-title" data-aos="fade-up" data-aos-delay="100">
-                    <div class="sub-title">
-                        <i class='bx bxs-graduation'></i> <p>Academics</p>
-                    </div>
-                    <h2>Where Excellence Meets Opportunity</h2>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                        <div class="academics-item" data-aos="fade-up" data-aos-delay="100">
-                            <img src="assets/img/icon/education-1.png" alt="icon">
-                            <h4>Education Services</h4>
-                            <p>There are many variations of passages Lorem Ipsum avaiable but the majority hav suffered alteration in some form</p>
-                            <a href="the-campus-experience.html">Learn More <i class='bx bx-right-arrow-alt'></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                        <div class="academics-item active" data-aos="fade-up" data-aos-delay="200">
-                            <img src="assets/img/icon/education-2.png" alt="icon">
-                            <h4>International Hubs</h4>
-                            <p>There are many variations of passages Lorem Ipsum avaiable but the majority hav suffered alteration in some form</p>
-                            <a href="the-campus-experience.html">Learn More <i class='bx bx-right-arrow-alt'></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                        <div class="academics-item" data-aos="fade-up" data-aos-delay="300">
-                            <img src="assets/img/icon/education-3.png" alt="icon">
-                            <h4>Bachelor’s and Master’s</h4>
-                            <p>There are many variations of passages Lorem Ipsum avaiable but the majority hav suffered alteration in some form</p>
-                            <a href="the-campus-experience.html">Learn More <i class='bx bx-right-arrow-alt'></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Academics Area -->
-       
+        <!-- End Section Banner Area -->       
         <!-- Start Campus Tour Area -->
         <div class="campus-tour">
             <div class="container-fluid p-0">
                 <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
                     <div class="col-lg-6">
                         <div class="content" data-aos="fade-up" data-aos-delay="100">
-                            <div class="sub-title">
-                                <i class='bx bxs-graduation'></i> <p>Core Values</p>
-                            </div>
-                            <h2>Special Campus Tour</h2>
+                            
+                            <h2>DEUXIEME PROMOTION DE LA DOUBLE DIPLOMATION DE LA LICENCE</h2>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tem incid idunt ut labore et magna aliqua.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tem incid idunt ut labore et dolore magna aliqua. Ut enim ad minim iam quis nostrud xerci tation ulla mco laboris nisi ut</p>
+                            <p>Deuxième promotion de la double diplomation en Licence
+                                La filière MIAGE d’Abidjan lance avec fierté sa deuxième promotion de la double diplomation en partenariat avec l’Université de Rennes 1 (France).
+                                Ce programme permet aux étudiants d’obtenir deux diplômes reconnus – ivoirien et français – à l’issue de leur formation.
+                                Cette collaboration renforce l’ouverture internationale de la MIAGE, valorise les compétences des étudiants et confirme son engagement pour une formation de qualité, tournée vers les enjeux du numérique et de la gestion.
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="image cp-bg-1" data-aos="fade-zoom-in" data-aos-delay="100">
+                        <div class="image cp-bg-1" data-aos="fade-zoom-in" data-aos-delay="100" style="
+                         background-image: url('{{asset('assets1/img/all-img/rennes.jpg')}}');">
                         </div>
                     </div>
                 </div>
                 <div class="row g-0 align-items-center">
                     
                     <div class="col-lg-6">
-                        <div class="image cp-bg-2" data-aos="fade-zoom-in" data-aos-delay="100">
+                        <div class="image cp-bg-2" data-aos="fade-zoom-in" data-aos-delay="100" style="
+                         background-image: url('{{asset('assets1/img/all-img/MOOV.jpg')}}');">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="content" data-aos="fade-up" data-aos-delay="100">
-                            <div class="sub-title">
-                                <i class='bx bxs-graduation'></i> <p>Core Values</p>
-                            </div>
-                            <h2>Graduation</h2>
+                            
+                            <h2>MIAGE VAINCEUR DE L'HACKATHON DE MOOV </h2>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tem incid idunt ut labore et magna aliqua.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tem incid idunt ut labore et dolore magna aliqua. Ut enim ad minim iam quis nostrud xerci tation ulla mco laboris nisi ut</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
-                    <div class="col-lg-6">
-                        <div class="content" data-aos="fade-up" data-aos-delay="100">
-                            <div class="sub-title">
-                                <i class='bx bxs-graduation'></i> <p>Core Values</p>
-                            </div>
-                            <h2>Special Campus Tour</h2>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tem incid idunt ut labore et magna aliqua.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tem incid idunt ut labore et dolore magna aliqua. Ut enim ad minim iam quis nostrud xerci tation ulla mco laboris nisi ut</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="image cp-bg-3" data-aos="fade-zoom-in" data-aos-delay="100">
+                            <p>La filière MIAGE d’Abidjan s’illustre une fois de plus en remportant brillamment le Hackathon organisé par Moov Africa. Cette victoire témoigne de l’ingéniosité, de la rigueur et de l’esprit d’innovation de ses étudiants. Face à une compétition relevée, l’équipe MIAGE a su proposer une solution technologique pertinente, répondant efficacement aux problématiques posées.
+                            Cette performance confirme la position de la MIAGE comme un vivier de talents prêts à impacter le monde numérique et entrepreneurial.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -156,21 +61,6 @@
         </div>
         <!-- End Campus Tour Area -->
 
-        <!-- Start Subscribe Area -->
-        <div class="subscribe-area ptb-100">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up" data-aos-delay="100">
-                    <div class="sub-title">
-                        <i class='bx bxs-graduation'></i> <p>Subscribe to Our Newsletter</p>
-                    </div>
-                    <h2>Get the Latest Clgun News Delivered to You Inbox</h2>
-                </div>
-
-                <div class="subscribe-btn text-center" data-aos="fade-up" data-aos-delay="100">
-                    <a class="default-btn" href="#">Subscribe Now</a>
-                </div>
-            </div>
-        </div> 
-        <!-- End Subscribe Area -->
+        
 @endsection
         
